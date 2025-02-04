@@ -4,21 +4,25 @@
 
 1. Clone the repository:
 ```bash
-git clone git@github.com:Viktopia/notipus.git
-cd notipus
+git clone git@github.com:ThNikGhost/notipus2.git
+cd notipus2
 ```
 
 2. Build the Docker image:
 ```bash
-docker build -t notipus .
+docker-compose build
+```
+
+3. Create .env file. Template:
+```
+SLACK_WEBHOOK_URL=https://hooks.slack.com/test
+CHARGIFY_WEBHOOK_SECRET=test_secret
+SHOPIFY_WEBHOOK_SECRET=test_secret
+SHOPIFY_SHOP_URL=test.myshopify.com
+SHOPIFY_ACCESS_TOKEN=test_token
 ```
 
 3. Run the container with your environment variables:
 ```bash
-docker run -d \
-  -p 8080:8080 \
-  -e SLACK_WEBHOOK_URL=your_slack_webhook_url \
-  -e CHARGIFY_WEBHOOK_SECRET=your_chargify_webhook_secret \
-  -e SHOPIFY_WEBHOOK_SECRET=your_webhook_secret \
-  notipus
+docker-compose up -d
 ```
