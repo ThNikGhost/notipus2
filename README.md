@@ -26,3 +26,9 @@ SHOPIFY_ACCESS_TOKEN=test_token
 ```bash
 docker-compose up -d
 ```
+
+## Test
+Run docker-compose and run the command:
+```
+docker exec django_app poetry run pytest
+```
